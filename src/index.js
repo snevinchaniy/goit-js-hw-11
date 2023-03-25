@@ -8,6 +8,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 const searchForm = document.querySelector('.search-form');
 const gallery = document.querySelector('.gallery');
 const btnLoadMore = document.querySelector('.load-more');
+const inputForm = document.querySelector('input');
 
 // слухачі на submit та click
 searchForm.addEventListener('submit', handleSearch);
@@ -27,7 +28,7 @@ async function handleSearch(e) {
   hideLoadMoreButton();
 
   try {
-    searchData = e.currentTarget.searchData.value.trim();
+    searchData = inputForm.value.trim();
     page = 1;
 
     if (!searchData) {
